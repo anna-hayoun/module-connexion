@@ -1,0 +1,431 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
+}
+
+body 
+{
+  background: #000000;
+  font-size: 110%;
+}
+
+
+
+                        /******** VIDEO DE FOND *********/
+
+video#vid
+{
+    position: fixed; 
+    right: 0; 
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto; 
+    z-index: -100;
+    background: #000000 no-repeat;
+    background-size: cover;
+}
+
+
+
+                        /********* HEADER ********/
+
+.titre
+{
+    color: white;
+    font-size: 230%;
+    margin-right: 52%;
+    margin-left: 5%;
+    margin-top: 0.5%;
+}
+
+
+                        /********* MENU HEADER ***********/
+
+
+:root
+{
+    --hauteur-menu: 80px;
+}
+
+
+nav
+{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+}
+
+nav > ul
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.452);
+    height: var(--hauteur-menu);
+}
+
+nav ul
+{
+    list-style-type: none;
+}
+
+nav > ul > li
+{
+    font-size: 130%;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    height: 100%;
+    margin-left: 12%;
+}
+
+nav > ul > li > a
+{
+    position: absolute;
+    top: 30%;
+    right: 60%;
+}
+
+li a
+{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.droll > a:after
+{
+    content: '❯';
+    font-size: 15px;
+    margin-left: 10%;
+}
+
+.undroll
+{
+    margin-top: var(--hauteur-menu);
+    width: 150%;
+    background-color: rgb(0, 0, 0);
+    border-radius: 2px;
+    overflow: hidden;
+    max-height: 0;
+    margin-left: -20%;
+}
+
+.undroll > li > a 
+{
+    height: 60px;
+    padding-lefT: 6%;
+    padding-right: 10%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+}
+
+nav > ul > li:hover > a
+{
+    color: #e42020;
+}
+
+.undroll > li:hover 
+{
+    background-color: rgba(221, 30, 30, 0.3);
+}
+
+.undroll > li:hover > a
+{
+    color: rgb(255, 255, 255);
+}
+
+@keyframes appearundroll
+{
+0%  {
+        box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0);
+        border-top: 3px solid #e42020;
+    }
+30% {
+        box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
+    }
+100%{
+        max-height: 50em;
+        border-top: 3px solid #e42020;
+        box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.droll:hover > .undroll
+{
+    animation: appearundroll 1s forwards;
+}
+
+
+
+            /***** HEADER CONNEXION.PHP / INSCRIPTION.PHP *****/
+
+h4
+{
+    text-align: left;
+    font-size: 350%;
+    margin-left: 3%;
+    color: white;
+    margin-top: 2%;
+}
+
+
+
+            /********** MAIN INDEX.PHP **********/ 
+
+
+.intro
+{
+    text-align: center;
+    font-size: 24px;
+    margin-top: 5%;
+    color: rgb(41, 41, 41);
+}
+
+.intro a
+{
+    text-decoration: none;
+    color: rgb(155, 22, 22);
+}
+
+.send-img
+{
+    text-align: center;
+    margin-top: 10%;
+    font-size: 150%;
+}
+
+                /********** FORMULAIRES **********/
+
+.form-label
+{
+    font-size: 150%;
+    margin: 7%;
+    color: #fdfdfd9d;
+}
+
+.form-text
+{
+    margin-top: 2%;
+    margin-bottom: 8%;
+    font-size: 0.720em;
+    color: #6c757d;
+}
+
+.form-control
+{
+    display: block;
+    width: 100%;
+    padding: 2%;
+    font-size: 0.9rem;
+    margin-top: 6%;
+    font-weight: 400;
+    line-height: 1.5;
+    color:#212529;
+    background-color:#fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+.form-control[type=file]
+{
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.form-control::-webkit-file-upload-button
+{
+    padding: 2%;
+    -webkit-margin-end: .65rem;
+    margin-inline-end: .65rem;
+    color:#212529;
+    background-color:#d9dee6;
+    pointer-events: none;
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    border-inline-end-width: 1px;
+    border-radius: 5%;
+    margin-left: 0.1%;
+    -webkit-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+@media (prefers-reduced-motion:reduce)
+{
+    .form-control::-webkit-file-upload-button
+    {
+        -webkit-transition: none;
+        transition: none;
+    }
+}
+
+.form-control:hover::-webkit-file-upload-button
+{
+    background-color:#eec2bf;
+    color: white;
+    border: 2px solid #eec2bf;
+    border-radius: 4%;
+}
+
+h2
+{
+    text-align: center;
+    color: white;
+    margin-top: 6%;
+}
+
+.tab h1
+{
+    margin-bottom: 5%;
+    text-align: center;
+    color: rgb(161, 161, 161);
+}
+
+td
+{
+    text-align: center;
+    color: rgb(161, 161, 161);
+}
+
+.box 
+{
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  padding: 30px 35px 30px 35px;
+  background: rgb(0, 0, 0);
+  margin: 60px auto;
+  width: 360px;
+  color: white;
+}
+
+h1.box-logo a 
+{
+  text-decoration:none;
+}
+
+h1.box-title 
+{
+  color: #AEAEAE;
+  background: rgb(0, 0, 0);
+  font-weight: 300;
+  padding: 15px 25px;
+  line-height: 30px;
+  font-size: 180%;
+  text-align: center;
+  margin: -27px -26px 26px;
+  margin-top: 2%;
+}
+
+.box-button 
+{
+  border-radius: 7px;
+  background: #d2483c;
+  text-align: center;
+  cursor: pointer;
+  font-size: 19px;
+  width: 100%;
+  height: 51px;
+  padding: 0;
+  color: #fff;
+  border: 0;
+  outline:0;
+}
+
+.box-register
+{
+  text-align: center;
+  margin-bottom: 0px;
+  margin-top: 15%;
+}
+
+.box-register a
+{
+  text-decoration:none;
+  font-size: 100%;
+  color:#666;
+}
+
+.box-input 
+{
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 25px;
+  padding-left:10px;
+  border-radius: 5px;
+  width: 347px;
+  height: 50px;
+}
+
+.box-input:focus 
+{
+    outline: none;
+    border-color:#5c7186;
+}
+
+                /******** PROFIL.PHP ******/
+
+.profil
+{
+    color: rgb(161, 161, 161);
+    margin-bottom: 8%; 
+    text-align: center;
+}
+
+                /******* AFFICHAGE MESSAGES D'ALERTE *******/
+
+.sucess
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15%;
+    text-align: center;
+	color: rgb(66, 66, 66);
+    font-size: 150%;
+    font-family: 'Roboto Mono', monospace, Arial, Helvetica, sans-serif;
+}
+
+.sucess2
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15%;
+    text-align: center;
+	color: rgb(66, 66, 66);
+    font-size: 150%;
+}
+
+p.errorMessage 
+{
+    color: #FFFFFF;
+}
+
+                        /****** footer ******/
+
+#link
+{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 4%;
+    margin-bottom: 8%;
+    color: rgb(41, 41, 41);
+}
+
+#link > a
+{
+    text-decoration: none;
+    color: rgb(180, 26, 26);
+}
+
+.twi 
+{
+    margin-left: 48%;
+    margin-top: -15%;
+    margin-bottom: 1%;
+}
